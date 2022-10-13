@@ -6,9 +6,14 @@ window.loadChart=function(json){
   console.log(obj);
   const data=obj.data;
   const type=obj.type;
+
+  const width=obj.width;
+  console.log(width);
+  const height=obj.height;
   console.log(data);
   const options = {
     bindto: "#chart",
+    size:{width:width, height:height},
     axis: 
       {x: {type: "category"}},
     data: {
