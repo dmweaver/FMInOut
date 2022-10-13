@@ -2,6 +2,8 @@ import c3 from "c3";
 
 const options = {
   bindto: "#chart",
+  axis: 
+    {x: {type: "category"}},
   data: {
     colors: {
       Apples: "#ff0000",
@@ -9,10 +11,34 @@ const options = {
       Bananas: "#0000ff",
     },
     type: "bar",
-    columns: [
-      ["Apples", 90, 800, 600, 400, 850, 50],
-      ["Peaches", 50, 20, 10, 40, 15, 25],
-      ["Bananas", 350, 620, 410, 340, 215, 525],
+    keys: {x: "name", value:["Jan", "Feb", "Mar"]},
+    json: [
+      
+        {
+          "name": "Apples",
+          "Jan": 327,
+          "Feb": 437,
+          "Mar": 111
+        },
+        {
+          "name": "Peaches",
+          "Jan": 555,
+          "Feb": 454,
+          "Mar": 222
+        },
+        {
+          "name": "Pears",
+          "Jan": 242,
+          "Feb": 864,
+          "Mar": 343
+        },
+        {
+          "name": "Bananas",
+          "Jan": 222,
+          "Feb": 454,
+          "Mar": 434
+        }
+      
     ],
   },
 };
