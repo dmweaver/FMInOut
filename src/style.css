@@ -1,4 +1,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+};
+.c3-chart-arc text {
+  fill: black;
 }
