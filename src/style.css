@@ -4,4 +4,8 @@ body {
 };
 .c3-chart-arc text {
   fill: black;
+};
+.c3-chart-bars .c3-shape {
+  stroke: black !important;
+  stroke-width: 1 !important;
 }

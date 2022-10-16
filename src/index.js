@@ -4,9 +4,6 @@ window.loadChart=function(json){
   console.log(json);
   const obj=JSON.parse(json);
 
-  // const obj1=JSON.parse(obj.colours);
-  // const obj1 = json.replace(/\\/g, "");
-  // console.log(obj1);
 
 const productsArray=["Apples", "Peaches", "Pears", "Bananas"];
 
@@ -21,17 +18,12 @@ const productsArray=["Apples", "Peaches", "Pears", "Bananas"];
   console.log(height);
   const space=obj.space;
   console.log(space);
-  const AppleColour=obj.AppleColour;
-  const PeachColour=obj.PeachColour;
-  const BananaColour=obj.BananaColour;
-  console.log (AppleColour);
-  console.log (PeachColour);
-  console.log (BananaColour);
+  
 
 // const{data, type, width, height, space}=obj
 
-  // const colours=obj.colours;
-  // console.log(colours);
+  const colours=obj.colours;
+  console.log(colours);
   
 
   const options = {
@@ -49,7 +41,7 @@ const productsArray=["Apples", "Peaches", "Pears", "Bananas"];
       
       bar: {space: space,
         width: {
-          ratio: 0.8,
+          ratio: 0.9,
         }},
     data: {
       onclick: function(d) {
@@ -60,13 +52,10 @@ const productsArray=["Apples", "Peaches", "Pears", "Bananas"];
         const toSendToFM={name, product};
         console.log(toSendToFM);
         FileMaker.PerformScript("Chart Click", JSON.stringify (toSendToFM));
-       },
-      colors: 
-      {
-        Apple: AppleColour,
-        Peaches: PeachColour,
-        Banans: BananaColour,
       },
+      colors: colours,
+      
+     
       labels:true,
       
       type: type,
@@ -75,4 +64,16 @@ const productsArray=["Apples", "Peaches", "Pears", "Bananas"];
     },
   };
   const chart = c3.generate(options);
+
+window.transformChart=function(json){
+  const obj=JSON.parse(json);
+  const type=obj.type;
+  console.log(obj);
+  console.log(type);
+  chart.transform(type);
+
+
 };
+
+};
+
