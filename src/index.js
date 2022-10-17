@@ -84,26 +84,37 @@ window.transformChartSize=function(json){
 
 };
 
-// window.transformChartColour=function(json){
-//   const obj=JSON.parse(json);
-//   const colour=obj.colour;
-//   console.log(obj);
-//   console.log(colour);
 
-//   const current=chart.data.colors();
-//   console.log(current);
+window.transformChartToggle=function(json){
+  const obj=JSON.parse(json);
+  const ids=obj;
+ 
+  console.log(ids);
+  chart.toggle(ids);
+// chart.toggle("Jan");
+
+};
+
+window.transformChartColour=function(json){
+  const obj=JSON.parse(json);
+  const colour=obj.colour;
+  // console.log(obj);
+  console.log(colour);
+
+  // const current=chart.data.colors();
+  // console.log(current);
   
-//   if(colour==="normal") 
-//   {var newcolour={Feb:'#FF7D11',Jan:'#FF2C11',Mar:'#007D57'}}
-//   else if (colour==="colour blind") 
-//   {var newcolour={Feb:'#A8DDB5',Jan:'#E0F3DB',Mar:'#43A2CA'}};
-//   console.log(newcolour);
+  if(colour==="normal") 
+  {var newcolour={Feb:'#FF7D11',Jan:'#FF2C11',Mar:'#007D57'}}
+  else if (colour==="colour blind") 
+  {var newcolour={Feb:'#A8DDB5',Jan:'#E0F3DB',Mar:'#43A2CA'}};
+  console.log(newcolour);
   
-//   chart.transform(chart.data.colors(newcolour));
-//   // chart.flush;
+  chart.data.colors(newcolour);
+ 
 
 
-// };
+};
 
 };
 
