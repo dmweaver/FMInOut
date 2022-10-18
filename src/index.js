@@ -87,11 +87,11 @@ window.transformChartSize=function(json){
 
 window.transformChartToggle=function(json){
   const obj=JSON.parse(json);
-  const ids=obj;
+  const ids=obj.ids;
  
   console.log(ids);
   chart.toggle(ids);
-// chart.toggle("Jan");
+
 
 };
 
